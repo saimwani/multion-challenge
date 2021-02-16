@@ -34,3 +34,4 @@ If you use the multiON framework, please consider citing the following paper:
 
 ## Acknowledgements
 We thank the [habitat](https://aihabitat.org/) team for building the habitat framework. We also thank [EvalAI](https://eval.ai/) team who helped us host the challenge. This work would not be possible without the [Matterport3D dataset](https://niessner.github.io/Matterport/).
+
