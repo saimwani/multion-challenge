@@ -20,6 +20,26 @@ We extend the evaluation protocol of [ObjectNav](https://arxiv.org/abs/2006.1317
 
 ![PPL Formula](imgs/PPL.png "PPL Formula")
 
+## Submission Guidelines  
+Participants can enter the contest by our [EvalAI](https://staging.eval.ai/web/challenges/challenge-page/474/overview) page. Participants need to upload docker containers which will be evaluated from our end. 
+
+1. Install [nvidia-docker](https://github.com/NVIDIA/nvidia-docker) by following [these](https://github.com/nvidia/nvidia-docker/wiki/Installation-(version-2.0)) instructions.
+
+2. To get the starter code, clone the repository
+```
+git clone https://github.com/saimwani/multion-challenge.git
+cd multion-challenge
+```
+3. Build a docker image
+```
+docker build -t <docker-image-name> .
+```
+4. Run the docker image
+```
+sudo docker run -v /path-to-data --runtime=nvidia name:latest
+```
+5. Implement agent in `evaluate.py`.
+6. Submit docker on EvalAI.
 
 ## Citing MultiON Challenge 2021
 If you use the multiON framework, please consider citing the following paper:
