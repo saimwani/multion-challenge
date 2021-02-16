@@ -49,6 +49,20 @@ docker build -t multi_on .
 ```
 sudo docker run -v ${MULTION_DATA_PATH}/data:/multion-chal-starter/data --runtime=nvidia multi_on:latest
 ```
+You should see an output like this:
+
+```
+2021-02-16 22:43:52,343 Initializing dataset MultiNav-v1
+2021-02-16 22:43:52,344 initializing sim Sim-v0
+2021-02-16 22:43:58,237 Initializing task MultiNav-v1
+2021-02-16 22:44:16,795 distance_to_currgoal: 7.841611647605896
+2021-02-16 22:44:16,795 distance_to_multi_goal: 23.959913063049317
+2021-02-16 22:44:16,795 success: 0.0
+2021-02-16 22:44:16,795 episode_length: 3.2
+2021-02-16 22:44:16,795 mspl: 0.0
+2021-02-16 22:44:16,795 percentage_success: 0.0
+2021-02-16 22:44:16,795 pspl: 0.0
+```
 
 7. Install EvalAI and submit your docker image. See detailed instructions [here](https://cli.eval.ai/).
 
