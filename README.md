@@ -20,26 +20,48 @@ We extend the evaluation protocol of [ObjectNav](https://arxiv.org/abs/2006.1317
 
 ![PPL Formula](imgs/PPL.png "PPL Formula")
 
-## Submission Guidelines  
-Participants can enter the contest by our [EvalAI](https://staging.eval.ai/web/challenges/challenge-page/474/overview) page. Participants need to upload docker containers which will be evaluated from our end. 
+## Submission Guidelines 
 
-1. Install [nvidia-docker](https://github.com/NVIDIA/nvidia-docker) by following [these](https://github.com/nvidia/nvidia-docker/wiki/Installation-(version-2.0)) instructions.
+Participate in the contest by registering on the EvalAI challenge page and creating a team. Participants will upload docker containers with their agents that are evaluated on an AWS GPU-enabled instance. Before pushing the submissions for remote evaluation, participants should test the submission docker locally to ensure it is working. Instructions for training, local evaluation, and online submission are provided below.
 
-2. To get the starter code, clone the repository
+
+
+To participate in the challenge, visit our [EvalAI](https://staging.eval.ai/web/challenges/challenge-page/474/overview) page. Participants need to upload docker containers with their agents using EvalAI. Before making your submission, you should run your container locally on the mini-val data split to ensure the performance metrics match with those of remote evaluation. We provide a base docker image and participants only need to edit `evaluate.py` file which implements the navigation agent. Instructions for building your docker container are provided below.
+
+
+1. Install [nvidia-docker v2](https://github.com/NVIDIA/nvidia-docker) by following instructions given [here](https://github.com/nvidia/nvidia-docker/wiki/Installation-(version-2.0)).
+
+2. Clone this repository: 
 ```
 git clone https://github.com/saimwani/multion-challenge.git
 cd multion-challenge
 ```
-3. Build a docker image
+3. Edit `evaluate.py` to implement your agent. Currently, it uses an agent taking random actions.
+
+4. Make changes in the the provided Dockerfile if your agent has additional dependencies. They should be installed inside a conda environment named `habitat` that already exists in our docker. 
+
+5. Build the docker container (this may need `sudo` priviliges):
 ```
-docker build -t <docker-image-name> .
+docker build -t multi_on .
 ```
-4. Run the docker image
+
+6. Test the docker container locally. `${MULTION_DATA_PATH}` should contain the `data` folder such that `data/scene_datasets/mp3d` folder has the Matterport3D scenes and `data` contains the `3_ON_minival` folder provided in this repo.  
 ```
-sudo docker run -v /path-to-data --runtime=nvidia name:latest
+sudo docker run -v ${MULTION_DATA_PATH}/data:/multion-chal-starter/data --runtime=nvidia multi_on:latest
 ```
-5. Implement agent in `evaluate.py`.
-6. Submit docker on EvalAI.
+
+7. Install EvalAI and submit your docker image. See detailed instructions [here](https://cli.eval.ai/).
+
+```
+# Install EvalAI Command Line Interface
+pip install "evalai>=1.3.5"
+
+# Set EvalAI account token
+evalai set_token <your EvalAI participant token>
+
+# Push docker image to EvalAI docker registry
+evalai push multi_on:latest --phase <phase-name>
+```
 
 ## Citing MultiON Challenge 2021
 If you use the multiON framework, please consider citing the following paper:
