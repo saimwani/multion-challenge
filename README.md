@@ -1,6 +1,6 @@
 # MultiON Challenge 2021
 
-This repository contains submission guidelines and starter code for the MultiON Challenge 2021. For challenge overview, check [challenge webpage](http://aspis.cmpt.sfu.ca/projects/multion/). To participate, visit EvalAI challenge page.
+This repository contains submission guidelines and starter code for the MultiON Challenge 2021. For challenge overview, check [challenge webpage](https://multion-challenge.github.io/). To participate, visit EvalAI challenge page.
 
 ## Task
 
