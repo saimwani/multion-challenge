@@ -74,7 +74,7 @@ evalai push multi_on:latest --phase <phase-name>
 ```
 
 ## Citing MultiON Challenge 2021
-If you use the multiON framework, please consider citing the following paper:
+If you use the multiON framework, please consider citing the following [paper](https://arxiv.org/pdf/2012.03912.pdf):
 ```
 @inproceedings{wani2020multion,
     title       =   {Multi-ON: Benchmarking Semantic Map Memory using Multi-Object Navigation},
