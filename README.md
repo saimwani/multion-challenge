@@ -43,7 +43,7 @@ docker build -t multi_on .
 
 6. Test the docker container locally. `${MULTION_DATA_PATH}` should contain the `data` folder such that `data/scene_datasets/mp3d` folder has the Matterport3D scenes and `data` contains the `3_ON_minival` folder provided in this repo.  
 ```
-sudo docker run -v ${MULTION_DATA_PATH}/data:/multion-chal-starter/data --runtime=nvidia multi_on:latest
+docker run -v ${MULTION_DATA_PATH}/data:/multion-chal-starter/data --runtime=nvidia multi_on:latest
 ```
 You should see an output like this:
 
