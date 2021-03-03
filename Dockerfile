@@ -1,4 +1,5 @@
-FROM saimwani/multion-chal:starter_code
-ADD ss.py /multion-chal-starter
+FROM saimwani/multion-chal:starter_2021
+ADD evaluate.py /multion-chal-starter
+ADD submit.sh /multion-chal-starter
 WORKDIR /multion-chal-starter
-CMD ["/bin/bash", "-c", "source activate habitat && python evaluate.py"]
+CMD ["/bin/bash", "-c", "source activate habitat && bash submit.sh"]
