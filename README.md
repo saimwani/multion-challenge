@@ -41,10 +41,10 @@ cd multion-challenge
 docker build -t multi_on .
 ```
 
-5. Download Matterport3D scenes for Habitat [here](https://niessner.github.io/Matterport/) and place the data in: `multion-challenge/data/scene_datasets/mp3d`. Minival dataset is already contained in `multion-challenge/data/3_ON_minival`. 
+6. Download Matterport3D scenes for Habitat [here](https://niessner.github.io/Matterport/) and place the data in: `multion-challenge/data/scene_datasets/mp3d`. Minival dataset is already contained in `multion-challenge/data/3_ON_minival`. 
 
 
-6. Test the docker container locally.
+7. Test the docker container locally.
 ```
 docker run -v multion-challenge/data:/multion-chal-starter/data --runtime=nvidia multi_on:latest
 ```
@@ -60,7 +60,7 @@ Success: 0.0
 SPL: 0.0
 ```
 
-7. Install EvalAI and submit your docker image. See detailed instructions [here](https://cli.eval.ai/).
+8. Install EvalAI and submit your docker image. See detailed instructions [here](https://cli.eval.ai/).
 
 ```
 # Install EvalAI Command Line Interface
