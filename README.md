@@ -41,23 +41,23 @@ cd multion-challenge
 docker build -t multi_on .
 ```
 
-6. Test the docker container locally. `${MULTION_DATA_PATH}` should contain the `data` folder such that `data/scene_datasets/mp3d` folder has the Matterport3D scenes and `data` contains the `3_ON_minival` folder provided in this repo.  
+5. Download Matterport3D scenes for Habitat [here](https://niessner.github.io/Matterport/) and place the data in: `multion-challenge/data/scene_datasets/mp3d`. Minival dataset is already contained in `multion-challenge/data/3_ON_minival`. 
+
+
+6. Test the docker container locally.
 ```
-docker run -v ${MULTION_DATA_PATH}/data:/multion-chal-starter/data --runtime=nvidia multi_on:latest
+docker run -v multion-challenge/data:/multion-chal-starter/data --runtime=nvidia multi_on:latest
 ```
 You should see an output like this:
 
 ```
-2021-02-16 22:43:52,343 Initializing dataset MultiNav-v1
-2021-02-16 22:43:52,344 initializing sim Sim-v0
-2021-02-16 22:43:58,237 Initializing task MultiNav-v1
-2021-02-16 22:44:16,795 distance_to_currgoal: 7.841611647605896
-2021-02-16 22:44:16,795 distance_to_multi_goal: 23.959913063049317
-2021-02-16 22:44:16,795 success: 0.0
-2021-02-16 22:44:16,795 episode_length: 3.2
-2021-02-16 22:44:16,795 mspl: 0.0
-2021-02-16 22:44:16,795 percentage_success: 0.0
-2021-02-16 22:44:16,795 pspl: 0.0
+2021-02-05 11:28:19,591 Initializing dataset MultiNav-v1
+2021-02-05 11:28:19,592 initializing sim Sim-v0
+2021-02-05 11:28:25,368 Initializing task MultiNav-v1
+Progress: 0.0
+PPL: 0.0
+Success: 0.0
+SPL: 0.0
 ```
 
 7. Install EvalAI and submit your docker image. See detailed instructions [here](https://cli.eval.ai/).
@@ -72,6 +72,7 @@ evalai set_token <your EvalAI participant token>
 # Push docker image to EvalAI docker registry
 evalai push multi_on:latest --phase <phase-name>
 ```
+
 
 ## Citing MultiON Challenge 2021
 If you use the multiON framework, please consider citing the following [paper](https://arxiv.org/pdf/2012.03912.pdf):

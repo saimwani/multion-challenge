@@ -1,0 +1,15 @@
+{
+    "friction coefficient": 0.4,
+    "restitution coefficient": 0.1,
+    "rigid object paths":[
+        "objects/cylinder_red",
+        "objects/cylinder_green",
+        "objects/cylinder_blue",
+        "objects/cylinder_yellow",
+        "objects/cylinder_white",
+        "objects/cylinder_pink",
+        "objects/cylinder_black",
+        "objects/cylinder_cyan"
+    ]
+}
+
