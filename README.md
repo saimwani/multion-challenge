@@ -2,6 +2,8 @@
 
 This repository contains submission guidelines and starter code for the MultiON Challenge 2021. For challenge overview, check [challenge webpage](https://multion-challenge.github.io/). To participate, visit EvalAI challenge page.
 
+To receive challenge updates, please join our Google Group email list: [click here](https://groups.google.com/g/multion-challenge-2021/) to join or send an email to [multion-challenge-2021+subscribe@googlegroups.com](mailto:multion-challenge-2021+subscribe@googlegroups.com).
+
 ## Task
 
 In MultiON, an agent is tasked with navigating to a sequence of objects inserted into a realistic 3D environment. The challenge uses [AI Habitat](https://aihabitat.org/) for simulation and uses scenes from Matterport3D dataset. The target objects are randomly sampled from a set of 8 cylinders with identical shapes but different colors. 
