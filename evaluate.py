@@ -1,8 +1,8 @@
+import sys
+sys.path.insert(0, "")
 import argparse
 import os
 import random
-# import sys
-# sys.path.insert(0, "")
 import numpy as np
 import habitat
 from habitat.core.challenge import Challenge
@@ -15,20 +15,11 @@ class RandomWalker(habitat.Agent):
         pass
 
     def act(self, observations):
-        return {"action": np.random.choice(self._POSSIBLE_ACTIONS)}
-
+        return [np.random.choice(self._POSSIBLE_ACTIONS) for i in range(len(observations))]
 
 def main():
-    parser = argparse.ArgumentParser()
-    parser.add_argument(
-        "--phase", type=str, required=False, choices=["dev", "standard", "challenge"]
-    )
-    args = parser.parse_args()
-    phase = args.phase
     agent = RandomWalker()
-    challenge = Challenge(phase = phase)
+    challenge = Challenge()
     challenge.submit(agent)
-
-
 if __name__ == "__main__":
     main()

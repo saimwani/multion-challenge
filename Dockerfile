@@ -1,4 +1,4 @@
-FROM saimwani/multion-chal:starter_2021
+FROM saimwani/multion-chal:challenge_starter
 ADD evaluate.py /multion-chal-starter
 ADD submit.sh /multion-chal-starter
 WORKDIR /multion-chal-starter
