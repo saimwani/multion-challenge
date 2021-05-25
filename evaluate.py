@@ -14,7 +14,7 @@ class RandomWalker(habitat.Agent):
     def reset(self):
         pass
 
-    def act(self, observations):
+    def act(self, observations, not_done_masks):
         return [np.random.choice(self._POSSIBLE_ACTIONS) for i in range(len(observations))]
 
 def main():
