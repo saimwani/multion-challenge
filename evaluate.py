@@ -8,18 +8,28 @@ import habitat
 from habitat.core.challenge import Challenge
 
 class RandomWalker(habitat.Agent):
-    def __init__(self):
-        self._POSSIBLE_ACTIONS = np.array([0,1,2,3])
+    def __init__(self, task_config: habitat.Config):
+        self._POSSIBLE_ACTIONS = task_config.TASK.POSSIBLE_ACTIONS
 
     def reset(self):
         pass
 
-    def act(self, observations, not_done_masks):
-        return [np.random.choice(self._POSSIBLE_ACTIONS) for i in range(len(observations))]
+    def act(self, observations):
+        return {"action": np.random.choice(self._POSSIBLE_ACTIONS)}
 
 def main():
-    agent = RandomWalker()
-    challenge = Challenge()
+    
+    evaluation = os.environ["AGENT_EVALUATION_TYPE"]
+    config_paths = os.environ["CHALLENGE_CONFIG_FILE"]
+    config = habitat.get_config(config_paths)
+    agent = RandomWalker(task_config=config)
+    
+    if evaluation == "local":
+        challenge = habitat.Challenge(eval_remote=False)
+    else:
+        challenge = habitat.Challenge(eval_remote=True)
+
     challenge.submit(agent)
+    
 if __name__ == "__main__":
     main()

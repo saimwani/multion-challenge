@@ -1,8 +1,8 @@
-# MultiON Challenge 2021
+# MultiON Challenge 2022
 
-This repository contains submission guidelines and starter code for the MultiON Challenge 2021. For challenge overview, check [challenge webpage](https://multion-challenge.github.io/). To participate, visit EvalAI challenge page.
+This repository contains submission guidelines and starter code for the MultiON Challenge 2022. For challenge overview, check [challenge webpage](https://multion-challenge.github.io/). To participate, visit EvalAI challenge page.
 
-To receive challenge updates, please join our Google Group email list: [click here](https://groups.google.com/g/multion-challenge-2021/) to join or send an email to [multion-challenge-2021+subscribe@googlegroups.com](mailto:multion-challenge-2021+subscribe@googlegroups.com).
+To receive challenge updates, please join our Google Group email list: [click here](https://groups.google.com/g/multion-challenge-2022/) to join or send an email to [multion-challenge-2022+subscribe@googlegroups.com](mailto:multion-challenge-2022+subscribe@googlegroups.com).
 
 ## Task
 
@@ -31,7 +31,7 @@ To participate in the challenge, visit our [EvalAI](https://staging.eval.ai/web/
 
 2. Clone this repository: 
 ```
-git clone https://github.com/saimwani/multion-challenge.git
+git clone https://github.com/3dlg-hcvc/multion-challenge.git
 cd multion-challenge
 ```
 3. Edit `evaluate.py` to implement your agent. Currently, it uses an agent taking random actions.
@@ -53,9 +53,9 @@ docker run -v multion-challenge/data:/multion-chal-starter/data --runtime=nvidia
 You should see an output like this:
 
 ```
-2021-02-05 11:28:19,591 Initializing dataset MultiNav-v1
-2021-02-05 11:28:19,592 initializing sim Sim-v0
-2021-02-05 11:28:25,368 Initializing task MultiNav-v1
+2022-02-05 11:28:19,591 Initializing dataset MultiNav-v1
+2022-02-05 11:28:19,592 initializing sim Sim-v0
+2022-02-05 11:28:25,368 Initializing task MultiNav-v1
 Progress: 0.0
 PPL: 0.0
 Success: 0.0
@@ -76,7 +76,7 @@ evalai push multi_on:latest --phase <phase-name>
 ```
 
 
-## Citing MultiON Challenge 2021
+## Citing MultiON Challenge 2022
 If you use the multiON framework, please consider citing the following [paper](https://arxiv.org/pdf/2012.03912.pdf):
 ```
 @inproceedings{wani2020multion,
